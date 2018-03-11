@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "The Middleman" %></title>
+
+    <%= stylesheet_link_tag "normalize", "all" %>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,600,600i,700,700i,800" rel="stylesheet">
+  </head>
+
+  <body class="<%= page_classes %>">
+    <header class="main-header">
+      <div class="container main-header__container">
+        <div class="main-header__brand">
+          <%= image_tag "logo.svg", class: "fadeIn animated" %>
+        </div>
+        <nav class="main-header__nav">
+          <a href="#how">¿Qué es un chatbot?</a>
+          <a href="#cases">Soluciones</a>
+          <a href="#contact">Contacto</a>
+          <a class="btn btn-action" href="#contact">Solicitar Demostración</a>
+        </nav>
+      </div>
+    </header>
+    <%= yield %>
+    <footer class="main-footer">
+      <div class="container main-footer__container">
+        <div class="main-footer__brand">
+          <%= image_tag "logo.svg" %>
+        </div>
+        <nav class="main-footer__social-nav">
+          <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="facebook" href="#"><i class="fab fa-facebook"></i></a>
+          <a class="medium" href="#"><i class="fab fa-medium"></i></a>
+          <a class="" href="#"><i class="fab fa-instagram"></i></a>
+        </nav>
+      </div>
+    </footer>
+    <div class="container copyright">
+      <p>Copyright © 2017 Yalo. Todos los derechos reservados. Términos y Condiciones.</p>
+    </div>
+    <%= javascript_include_tag  "scripts" %>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script type="text/javascript">new WOW().init();</script>
+  </body>
+</html>
