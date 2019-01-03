@@ -36,7 +36,7 @@ img {
 
 $action-color: #FFE74F;
 $body-color: #FAFBFD;
-$dark-color: #041129;
+$dark-color: #101A2B;
 
 $brand-font: 'Brown', sans-serif;
 
@@ -76,12 +76,16 @@ $brand-font: 'Brown', sans-serif;
 }
 
 .main-header {
-  background: #fff;
   position: fixed;
   width: 100%;
   padding: 1em 0;
-  box-shadow: 0 0.2rem 0.4rem rgba(#000, 0.05);
   z-index: 100;
+  transition: all 0.2s ease;
+
+  &.is-active {
+    box-shadow: 0 0.2rem 0.4rem rgba(#000, 0.05);
+    background: #fff;
+  }
 
   &__container {
     display: flex;
@@ -169,26 +173,47 @@ $brand-font: 'Brown', sans-serif;
 }
 
 .trust {
-  padding: 3rem 0;
   text-align: center;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center
+  }
+
+  .container > div {
+    padding: 3rem 1rem;
+
+    // &:nth-of-type(1) {
+    //   border-right: 1px solid rgba(0,0,0,0.1)
+    // }
+  }
 
   &__text {
-    font-size: 1.2rem;
-    max-width: 50%;
+    font-size: 1rem;
     margin: 0 auto;
+    font-family: $brand-font;
+    color: rgba($dark-color, 0.5);
   }
 
   &__logos {
-    padding: 1rem 0;
+    padding: 1rem 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    width: 40%;
+    margin: 0 auto;
   }
 
-  &__logo + &__logo {
-    padding-left: 4rem;
+  &__logo {
+    max-width: 30%;
+    padding: 1em;
   }
+
 }
 
 .columns {
@@ -197,14 +222,15 @@ $brand-font: 'Brown', sans-serif;
 }
 
 .how {
-  padding: 5rem 0;
+  padding: 6rem 0;
 
   &__info {
     max-width: 50%;
   }
 
   &__title {
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-family: $brand-font;
   }
 
   .container {
@@ -213,8 +239,9 @@ $brand-font: 'Brown', sans-serif;
 
   &__text {
     padding: 1rem 0;
-    max-width: 50%;
+    max-width: 80%;
     line-height: 1.5em;
+    font-size: 1.4em;
     color: rgba($dark-color, 0.8);
   }
 }
@@ -222,6 +249,7 @@ $brand-font: 'Brown', sans-serif;
 .section {
   &__title {
     font-size: 2rem;
+    font-family: $brand-font;
   }
 
   &__subtitle {
@@ -230,7 +258,8 @@ $brand-font: 'Brown', sans-serif;
 }
 
 .tabs {
-  margin-top: 4rem;
+
+  margin-top: 4em;
 
   &__nav {
     display: flex;
@@ -282,7 +311,7 @@ $brand-font: 'Brown', sans-serif;
         font-size: 2.2rem;
         font-family: $brand-font;
         padding: 2rem 0;
-        text-decoration: underline;
+        line-height: 1em;
       }
 
       &__label {
@@ -311,9 +340,9 @@ $brand-font: 'Brown', sans-serif;
   }
 
   &__item {
-    width: 25%;
+    width: 30%;
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   &__icon {
@@ -323,6 +352,8 @@ $brand-font: 'Brown', sans-serif;
 
   &__title {
     padding: 0.5rem 0;
+    font-size: 1.2em;
+    font-family: $brand-font;
   }
 
   .more {
@@ -330,6 +361,14 @@ $brand-font: 'Brown', sans-serif;
     font-size: 1.1rem;
     font-style: italic;
   }
+
+  &__text {
+    font-size: 1.2em;
+  }
+}
+
+.cases {
+  padding: 5em 0;
 }
 
 .call-to {
@@ -387,10 +426,12 @@ $brand-font: 'Brown', sans-serif;
   &__item-title {
     font-size: 1.7rem;
     padding-bottom: 1rem;
+    font-family: $brand-font;
   }
 
   &__item-text {
     color: rgba($dark-color, 0.8);
+    font-size: 1.2em;
   }
 }
 
@@ -484,6 +525,61 @@ $brand-font: 'Brown', sans-serif;
   }
 }
 
+.facebook {
+  background: #0084ff;
+  color: #fff;
+  padding: 6em 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    width: 50%;
+  }
+
+  &__title {
+    font-family: $brand-font;
+    font-size: 3em;
+  }
+
+  &__text {
+    font-size: 1.2em;
+    padding: 1em 0;
+    color: rgba(#fff, 0.5);
+  }
+
+  &__stats {
+    display: flex;
+  }
+
+  &__stat {
+    padding: 1em;
+
+    strong {
+      font-size: 2em;
+      display: block;
+      font-family: $brand-font;
+    }
+
+    span {
+      font-size: 1.2em;
+      color: rgba(#fff, 0.5);
+    }
+  }
+
+  &__image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img { height: 360px; }
+  }
+}
+
+
 
 @media (max-width: 800px) {
 
@@ -494,8 +590,15 @@ $brand-font: 'Brown', sans-serif;
   .columns,
   .trust__logos,
   .features__list,
-  .contact__nav {
+  .contact__nav,
+  .facebook .container {
     flex-direction: column;
+  }
+
+  .trust__logos,
+  .facebook__info,
+  .facebook__image {
+    width: 100%;
   }
 
   .intro__demo,

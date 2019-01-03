@@ -41,3 +41,15 @@ $('a[href*="#"]')
       }
     }
   });
+  
+  window.onscroll = function() {myFunction()}
+
+  function myFunction() {
+    var position = $(window).scrollTop();
+    console.log(position);
+    if (position > 500) {
+      $('.main-header').addClass('is-active');
+    } else {
+      $('.main-header').removeClass('is-active');
+    }
+  }
